@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 //const DB = require("./db");
 
 const app = express();
@@ -21,5 +22,4 @@ app.listen(port, () => {
 app.get("/", async (req, res) => {
 
     //let user_object = await db.get_row("SELECT * FROM personal");
-    res.send("Hello World");
-});
+    res.sendFile(path.join(__dirname + '/startseite.html'));});
